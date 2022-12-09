@@ -105,13 +105,21 @@ main{
 }
 
 
-.row{
+#row{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content:space-around;
+    margin: 2rem 0rem;
+}
+
+.div-card{
+    margin: 1rem 0rem;
 }
 
 .col{
+    
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -125,8 +133,9 @@ main{
     justify-content: end;
 }
 
+
 .col-card{
-    padding: 0.5 !important;
+    padding: 0 !important;
     justify-content: center !important;
 }
 
@@ -211,6 +220,7 @@ p{
     margin-top: 1rem;
     width: 16rem;
     height: 10rem;
+    border-radius: 0.5rem;
     object-fit: cover;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
@@ -428,11 +438,10 @@ th {
 .container-details{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 95%;
-    margin: 3rem 0rem;
+    margin: 1rem 0rem;
 }
 
 .container1-details{
