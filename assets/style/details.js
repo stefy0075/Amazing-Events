@@ -1,24 +1,21 @@
-const containerCards = document.getElementById('dow')
-let eventos = Object.values(data.events)
-let fragment = document.createDocumentFragment()
+let eventos = data.events 
+const queryString = location.search
+const params = new URLSearchParams(queryString)
+const id = params.get("id")
 
-for (let events of eventos){ 
-    const divCard = document.createElement("div")
-    divCard.classList.add("container-details")
-    fragment.appendChild(divCard)
-    divCard.innerHTML +=
+const card = eventos.find(item => item._id == id)
+const containerCards = document.getElementById('dow')
+    containerCards.innerHTML =
     `<div class="container1-details">
-    <img  class="img-details" src= ${events.image} alt="feria de comidas">
+    <img  class="img-details" src="${card.image}" alt="feria de comidas">
     <section class="text-details">
-        <h1 class="h1"> ${events.name}</h1>
-        <p><b>Date:</b> ${events.date}</p>
-        <p><b>Description:</b> ${events.description}</p>
-        <p><b>Category:</b> ${events.category}</p>
-        <p><b>Place:</b> ${events.place}</p>
-        <p><b>Capacity:</b> ${events.capacity}</p>
-        <p id="asis"><b>Assistance:</b> ${events.assistance}</p>
-        <p><b>Price:</b> ${events.price}</p>
+        <h1 class="h1"> ${card.name}</h1>
+        <p><b>Date:</b> ${card.date}</p>
+        <p><b>Description:</b> ${card.description}</p>
+        <p><b>Category:</b> ${card.category}</p>
+        <p><b>Place:</b> ${card.place}</p>
+        <p><b>Capacity:</b> ${card.capacity}</p>
+        <p><b>Assistance: </b> ${card.assistance ? card.assistance : card.estimate}</p>
+        <p><b>Price:</b> ${card.price}</p>
     </section>
 </div>`
-  containerCards.appendChild(fragment)
-}

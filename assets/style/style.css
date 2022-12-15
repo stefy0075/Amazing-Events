@@ -3,6 +3,7 @@
     margin: 0px;
     box-sizing: border-box;
 }
+/* input[type="checkbox"] */
 
 header{
     display: flex;
@@ -118,8 +119,18 @@ main{
     margin: 1rem 0rem;
 }
 
+.form-check-inline{
+    margin-right: 0.5rem;
+}
+
+.col-9{
+    width: 80%;
+}
+.col-3{
+    width: 20%;
+}
+
 .col{
-    
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -127,6 +138,9 @@ main{
     margin: 2rem 0rem !important;
 }
 
+.form-check-inline{
+    font-size: 14px !important;
+}
 .col-search{
     display: flex;
     flex-direction: row;

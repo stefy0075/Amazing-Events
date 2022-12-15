@@ -1,27 +1,27 @@
-const containerCards = document.getElementById('row')
-let eventos = Object.values(data.events)
-let fragment = document.createDocumentFragment()
+import {createCards, createCheckbox, filter} from '../module/funciones.js'
 
-for (let events of eventos){
-    if(events.date < data.currentDate){ 
-    const divCard = document.createElement("div")
-    divCard.classList.add("card", "div-card", "content-card")
-    fragment.appendChild(divCard)
-    
-    divCard.innerHTML +=
-    `<div class="col">
-    <div class="card" style="width: 18rem;">
-      <img src= ${events.image} class="card-img-top" alt="food fest">
-      <div class="card-body">
-        <h5 class="card-title">${events.name}</h5>
-        <p class="card-text"> ${events.description}</p>
-        <div class="text-button">
-          <p>Price: ${events.price}</p>
-          <a href="./details.html" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-    </div>
-  </div>`
-  containerCards.appendChild(fragment)
-    }
-}
+const containerCheckbox = document.getElementById('contain-check')
+const containerCards = document.getElementById('row')
+const activeSearch = document.getElementById('inputSearch')
+const eventos = data.events
+const eventosFiltrados = eventos.filter(events => events.date < data.currentDate)
+
+const categoryEvents = [ ...new Set(eventosFiltrados.map(events => {return events.category})) ]
+let categoriasSeleccionadas = []
+const activeCheckbox = document.getElementById("contain-check")
+activeCheckbox.addEventListener('change', (e) => {
+  const checkbox = document.querySelectorAll('input[type="checkbox"]:checked')
+  categoriasSeleccionadas = Array.from(checkbox).map(element => element.value)
+  const eventosFiltradosPorCategoria = filter(categoriasSeleccionadas, activeSearch.value, eventosFiltrados) 
+  createCards( containerCards, eventosFiltradosPorCategoria, "../assets/details.html")
+})
+
+activeSearch.addEventListener('input', (e) => {
+  const search = document.getElementById("inputSearch")
+  const valueSearch1 = search.value
+  const eventosFiltradosPorBusqueda = filter(categoriasSeleccionadas, valueSearch1, eventosFiltrados)
+  createCards(containerCards, eventosFiltradosPorBusqueda, "../assets/details.html")
+ })
+
+createCheckbox(containerCheckbox, categoryEvents)
+createCards(containerCards, eventosFiltrados, "../assets/details.html")
