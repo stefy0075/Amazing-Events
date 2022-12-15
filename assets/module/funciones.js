@@ -29,7 +29,7 @@ export function createCheckbox(conteiner, array){
     let fragment = document.createDocumentFragment()
     array.forEach(events => {
     const divCheck = document.createElement("div")
-      divCheck.classList.add("form-check", "form-check-inline")
+      divCheck.classList.add("form-check", "form-check-inline") 
       divCheck.innerHTML +=
       `<div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="${events}" value="${events}">
