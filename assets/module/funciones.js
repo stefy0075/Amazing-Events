@@ -1,4 +1,4 @@
-export function createCards(conteiner, array, url){
+export function createCards(conteiner, array, url, value){
     let fragment = document.createDocumentFragment()
     conteiner.innerHTML = ""
     array.length
@@ -21,7 +21,7 @@ export function createCards(conteiner, array, url){
       </div>`
       fragment.appendChild(divCard)
     })
-    : (conteiner.innerHTML = `<h2>No results found for your search...</h2>`)
+    : (conteiner.innerHTML = `<h3>No results found for your search... "${value}" </h3>`)
     conteiner.appendChild(fragment)
   }
   
