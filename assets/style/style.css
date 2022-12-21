@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 header{
     display: flex;
     flex-direction: row;
@@ -12,9 +11,9 @@ header{
     justify-content: center;
     width: 100%;
     min-height: 20vh;
-    background-image: url(../images/portada.jpg);
+    background-image: url(../images/grandparentsopia.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
 }
 
@@ -23,9 +22,9 @@ nav{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.856);
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(252, 186, 143, 0.681);
 }
 
 .nav-a{
@@ -44,13 +43,15 @@ nav a{
     align-items: center;
     text-align: center;
     color: black;
-    background-color: rgb(255, 255, 255);
-    border-radius: 0.2rem;
     width: 3.5rem;
     text-decoration: none;
     font-size: 14px;
     font-weight: bolder;
 }
+nav a :hover{
+    font-size: 20px;
+}
+
 
 main{
     display: flex;
@@ -60,11 +61,16 @@ main{
     justify-content: space-between;
     align-content: center;
     min-height: 70vh;
-    background-color: rgba(217, 253, 253, 0.637);
+    background: linear-gradient(to right, rgb(255,255,253) 1%,rgb(255,255,247) 5%,rgb(253,250,234) 12%,rgb(253,249,215) 19%,rgb(251,246,196) 26%,rgb(245,242,185) 37%,rgb(216,228,177) 46%,rgb(173,211,179) 62%,rgb(87,193,170) 87%,rgb(54,140,117) 100%);
 }
+
+.main-details{
+    justify-content: center;
+}
+
 .logo-amazing{
-    width: 9rem;
-    height: 4rem;
+    width: 15rem;
+    height: 7rem;
     object-fit: contain;
     margin: 1rem 0rem 1rem 2rem;
 }
@@ -171,13 +177,12 @@ nav.navbar.bg-transparent{
     display: flex;
     margin: 1rem;
     height: 2.5rem;
-    width: 4.2rem;
+    width: 6.2rem;
     padding: 1rem;
-    color: white;
-    font-size: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
     font-weight: bold;
     border-radius: 0.5rem;
-    background-color: rgba(141, 141, 141, 0.847);
 }
 
 .navbar-collapse{
@@ -185,7 +190,7 @@ nav.navbar.bg-transparent{
 }
 
 .navbar-toggler{
-    background-color: rgba(141, 141, 141, 0.847);
+    background-color: rgba(255, 254, 254, 0.847);
 }
 
 .text-button{
@@ -245,7 +250,7 @@ footer{
     flex-wrap: wrap;
     min-width: 10vh;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.856);
+    background-color: rgba(252, 186, 143, 0.681);
 }
 
 .text-footer{
@@ -304,13 +309,31 @@ table{
 }
 
 td{
-    background-color: rgba(163, 163, 163, 0.477)!important;
+    background-color: rgba(252, 186, 143, 0.681)!important;
     border: 1px solid black !important;
+    
 }
 
 th {
-    background-color: rgba(141, 141, 141, 0.847)!important;
-    border: 1px solid black !important;
+    background-color: rgb(209, 129, 76)!important;
+    border: 2px solid black !important;
+    text-align: center !important;
+    font-size: 1.3rem;
+}
+
+#tr-stats{
+    background-color: rgba(255, 168, 109, 0.775)!important;
+    text-align: center !important;
+}
+
+.tr-stats{
+    background-color: rgba(255, 168, 109, 0.775)!important;
+    text-align: center !important;
+}
+
+.td-number{
+    text-align: right !important;
+    padding-right: 1.5rem !important;
 }
 
 @media (min-width: 319px) and (max-width: 426px){
@@ -490,8 +513,10 @@ th {
     padding: 0.5rem;
     border-radius: 1rem;
     border: 1px solid grey;
+    background-color: rgb(68, 151, 133);
 }
 .notFoud{
-    color: grey;
+    color: rgb(0, 0, 0);
     margin: 8rem 0rem;
+    font-size: 1.5rem !important;
 }
