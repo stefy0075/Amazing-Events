@@ -3,7 +3,7 @@
     margin: 0px;
     box-sizing: border-box;
 }
-/* input[type="checkbox"] */
+
 
 header{
     display: flex;
@@ -57,7 +57,7 @@ main{
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     min-height: 70vh;
     background-color: rgba(217, 253, 253, 0.637);
@@ -490,4 +490,8 @@ th {
     padding: 0.5rem;
     border-radius: 1rem;
     border: 1px solid grey;
+}
+.notFoud{
+    color: grey;
+    margin: 8rem 0rem;
 }

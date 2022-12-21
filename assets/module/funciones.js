@@ -21,7 +21,7 @@ export function createCards(conteiner, array, url, value){
       </div>`
       fragment.appendChild(divCard)
     })
-    : (conteiner.innerHTML = `<h3>No results found for your search... "${value}" </h3>`)
+    : (conteiner.innerHTML = `<p class="notFoud">No results found for... "${value}" </p>`)
     conteiner.appendChild(fragment)
   }
   
