@@ -57,23 +57,21 @@ export function filter(select, input, array){
   return filtradoPorBusqueda
 }
 
-export function eventHighestAssistance(eventos, contenedor){
-        let eventsAssistanceFilter = eventos.filter(even => even.hasOwnProperty("assistance") )
-        const highestAssistance = eventsAssistanceFilter.reduce((highest, current) => {
-            return current.assistance > highest.assistance ? current : highest;}, 
-            { assistance: 0 });
-        let porcentaje = parseInt(highestAssistance.assistance / highestAssistance.capacity * 100)
-        contenedor.innerHTML += 
-        `<td scope="row" id="FilaMayor"> ${highestAssistance.name} ${porcentaje} %</td>`
+export function eventHighestAssistance(eventos, container){
+        let eventsAssistanceFilter = eventos.filter(event => event.hasOwnProperty("assistance") )
+        const assistancePercentages = eventsAssistanceFilter.map(event => event.assistance / event.capacity * 100)
+        const highestAttendanceIndex = assistancePercentages.indexOf(Math.max(...assistancePercentages))
+        container.innerHTML += 
+        `<td scope="row" id="FilaMayor"> ${eventos[highestAttendanceIndex].name}
+        ${Math.max(...assistancePercentages).toFixed(2)} %</td>`
     }
 
-export function minAssistance(eventos, contenedor){
-        let eventsAssistanceFilter = eventos.filter(even => even.hasOwnProperty("assistance") )
-        const minAssitance = eventsAssistanceFilter.reduce((min, event) => {
-            return event.assistance < min.assistance ? event : min;}, eventsAssistanceFilter[0] );
-        let porcentaje = parseInt(minAssitance.assistance / minAssitance.capacity * 100)
-        contenedor.innerHTML += 
-        `<td scope="row" id="FilaMayor"> ${minAssitance.name}  ${porcentaje} %</td>`
+export function minAssistance(eventos, container){
+        let eventsAssistanceFilter = eventos.filter(event => event.hasOwnProperty("assistance") )
+        const assistancePercentages = eventsAssistanceFilter.map(event => event.assistance / event.capacity * 100)
+        const highestAttendanceIndex = assistancePercentages.indexOf(Math.min(...assistancePercentages))
+        container.innerHTML += 
+        `<td scope="row" id="FilaMayor"> ${eventos[highestAttendanceIndex].name} ${Math.min(...assistancePercentages).toFixed(2)} %</td>`
     }
 
 export function greaterCapacity(eventos,contenedor){
