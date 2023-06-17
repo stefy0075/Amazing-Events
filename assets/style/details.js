@@ -1,10 +1,13 @@
-let eventos = data.events 
-const queryString = location.search
-const params = new URLSearchParams(queryString)
-const id = params.get("id")
+fetch('https://amazing-events.onrender.com/api/events')
+  .then(response => response.json())
+  .then(datos => {
+    eventos = datos.events
+    const queryString = location.search
+    const params = new URLSearchParams(queryString)
+    const id = params.get("id")
 
-const card = eventos.find(item => item._id == id)
-const containerCards = document.getElementById('dow')
+    const card = eventos.find(item => item._id == id)
+    const containerCards = document.getElementById('dow')
     containerCards.innerHTML =
     `<div class="container1-details">
     <img  class="img-details" src="${card.image}" alt="feria de comidas">
@@ -19,3 +22,4 @@ const containerCards = document.getElementById('dow')
         <p><b>Price:</b> ${card.price}</p>
     </section>
 </div>`
+  })
