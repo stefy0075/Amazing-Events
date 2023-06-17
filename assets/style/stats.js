@@ -8,7 +8,7 @@ let conteinerPast = document.getElementById("conteinerPast")
 let dataStats;
 let dataStatsGeneral;
 
-fetch("https://amazing-events.onrender.com/api/events")
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
     .then((res) => res.json())
     .then((data) =>{
         dataStatsGeneral = data

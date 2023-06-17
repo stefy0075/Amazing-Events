@@ -6,7 +6,7 @@ const activeSearch = document.getElementById('inputSearch')
 let eventosGenerales;
 let eventos;
 
-fetch('https://amazing-events.onrender.com/api/events')
+fetch('https://mindhub-xj03.onrender.com/api/amazing')
   .then(response => response.json())
   .then(datos => {
     eventosGenerales = datos
