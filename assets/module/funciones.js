@@ -56,7 +56,6 @@ export function filter(select, input, array){
   let filtradoPorBusqueda = filterBySearch(filtradoPorCategoria, input)
   return filtradoPorBusqueda
 }
-
 export function eventHighestAssistance(eventos, container){
         let eventsAssistanceFilter = eventos.filter(event => event.hasOwnProperty("assistance") )
         const assistancePercentages = eventsAssistanceFilter.map(event => event.assistance / event.capacity * 100)
